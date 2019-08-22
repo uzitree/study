@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{list-style:none;padding:0;margin:0;height:100px;}
+        img{width:100px;}
+				ul{display:flex;}
+				body{width: 100%;}
+				.container { width: 300px; height: 200px; overflow: auto;}
+		</style>
+	<!--<script src="../dist/lazyload.js"></script>-->
+	<script src="../dist/lazyload.win.js"></script>
+</head>
+<body>
+    <div class="container">
+		<ul>
+			<li><img class="lazy" data-original="./img/1.png"></li> 
+			<li><img class="lazy" data-original="./img/2.png"></li>
+			<li><img class="lazy" data-original="./img/3.png"></li>
+			<li><img class="lazy" data-original="./img/4.png"></li>
+			<li><img class="lazy" data-original="./img/5.png"></li>
+			<li><img class="lazy" data-original="./img/6.png"></li>
+			<li><img class="lazy" data-original="./img/7.png"></li>
+			<li><img class="lazy" data-original="./img/8.png"></li>
+			<li><img class="lazy" data-original="./img/9.png"></li>
+			<li><img class="lazy" data-original="./img/0.png"></li>
+		</ul>
+	</div>
+</body>
+<script>
+	new LazyLoad('img.lazy', {
+		event: 'touchmove',
+		container: document.querySelector('.container')
+	});
+	
+</script>
+</html>

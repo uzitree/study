@@ -1,13 +1,10 @@
 module.exports = {
-  root: true, 
-  parserOptions: {
-      ecmaVersion: 2015,
-      sourceType: 'module'
-  },
-  env: {
-      browser: true,
-  },
-  rules: {
-    
+  "extends": "standard",
+  "plugins": [
+    "html"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-new": "off"
   }
 }
