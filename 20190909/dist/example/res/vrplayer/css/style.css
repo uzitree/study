@@ -1,0 +1,221 @@
+/* 假全屏 */
+.fullscreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+/* 初始化加载动画 */
+.vrplayer_pre {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background-image: url(../image/loading2.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+}
+/* 隐藏utovr默认手势图片 */
+#beginLayerImg {
+  display: none;
+}
+/* 隐藏utovr默认视频控制条 */
+#videoToolbar {
+  display: none;
+}
+/* 自定义工具条 */
+.vrplayer_toolLeft {
+  position: absolute;
+  width: 2rem;
+  height: auto;
+  left: 1rem;
+  top: 1rem;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 2rem;
+  padding: 0.5rem 0;
+}
+.vrplayer_toolLeft > div {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.vrplayer_tl_doLike {
+  background-image: url(../image/h5_praise.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_tl_doLike.press {
+  background-image: url(../image/h5_praise_press.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_tl_doShare {
+  background-image: url(../image/h5_share.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_tl_doComment {
+  background-image: url(../image/h5_comment.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_tl_doGyro {
+  background-image: url(../image/h5_gyro2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_tl_doGyro.press {
+  background-image: url(../image/h5_gyro2_press.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* 自定义控制条 */
+.vrplayer_ctrlBar {
+  position: absolute;
+  width: 94%;
+  height: 2.2rem;
+  bottom: 0;
+  left: 0;
+  margin: 0 3%;
+  /*background-color: rgba(0,0,0,0.2);*/
+  padding: 0.5rem 0;
+  /*border-top: 1px solid rgba(255, 255, 255, 0.4);*/
+  display: flex;
+  justify-content: space-between;
+}
+.vrplayer_ctrlBar > div {
+  display: flex;
+  color: #ffffff;
+  font-size: 0.7rem;
+  align-items: center;
+}
+.vrplayer_cb_doPlay {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background-image: url(../image/h5_play.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 0.5rem;
+}
+.vrplayer_cb_doPlay.press {
+  background-image: url(../image/h5_pause.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_cb_time .time {
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+}
+.vrplayer_cb_time .sep{
+  padding: 0 0.2rem;
+}
+/*
+.vrplayer_cb_time .current {}
+.vrplayer_cb_time .duration{}
+*/
+.vrplayer_cb_doQt {
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+  /* margin: 0 1rem; */
+  position: relative;
+  width: 4rem;
+  text-align: center;
+  cursor: pointer;
+}
+.vrplayer_cb_doQt > div {
+  display: none;
+}
+.vrplayer_cb_doQt.press > div {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5);
+  left: 0;
+  width: 100%;
+  bottom: 1.5rem;
+  border-radius: 0.3rem;
+}
+.vrplayer_cb_doQt h3 {
+  font-weight: normal;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+.vrplayer_cb_doMore {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-image: url(../image/h5_othervideo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_cb_doFullscreen {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-image: url(../image/h5_enlarge.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.vrplayer_cb_doFullscreen.press {
+  background-image: url(../image/h5_narrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* 自定义控制条 */
+.vrplayer_progBar {
+  position: absolute;
+  width: 94%;
+  height: 1rem;
+  bottom: 2.7rem;
+  left: 0;
+  margin: 0 3%;
+  display: flex;
+  justify-content: space-between;    
+  align-items: center;
+}
+.vrplayer_progBar > div {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255,255,255,0.2);
+  position: absolute;
+}
+.vrplayer_progBar > div.vrplayer_pb_loaded {
+  width: 0;
+  background-color: rgba(255,255,255,0.3);
+}
+.vrplayer_progBar > div.vrplayer_pb_played {
+  width: 0;
+  background-color: rgb(85, 157, 255);
+}
+/* 自定义居中播放按钮 */
+.vrplayer_playButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+}
+.vrplayer_playButton > div {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-image: url(../image/h5_playvolume.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: -1.5rem;
+  left: -1.5rem;
+}
+.vrplayer_playButton.press > div {
+  display: none
+}

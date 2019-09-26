@@ -1,0 +1,82 @@
+'use strict'
+
+const path = require('path')
+const webpack = require('webpack')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const moduleObject = {
+  rules: [
+    {
+      test: /.js$/,
+      use: 'babel-loader'
+    },
+    {
+      test: /.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]
+    },
+    {
+      test: /.(png|jpg|gif|jpeg)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 10240
+          }
+        }
+      ]
+    },
+    {
+      test: /\.js$/,
+      loader: 'eslint-loader',
+      enforce: 'pre',
+      include: [path.resolve(__dirname, 'src')],
+      options: {
+        formatter: require('eslint-friendly-formatter')
+      }
+    }
+  ]
+}
+
+const webConfig = {
+  target: 'web',
+  entry: './src/vrplayer.js',
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: 'vrplayer.win.js',
+    libraryTarget: 'window'
+  },
+  mode: 'development',
+  module: moduleObject,
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  }
+}
+
+const esConfig = {
+  target: 'node',
+  entry: './src/vrplayer.js',
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: 'vrplayer.es.js'
+  },
+  mode: 'development',
+  module: moduleObject,
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  }
+}
+
+module.exports = [webConfig, esConfig]

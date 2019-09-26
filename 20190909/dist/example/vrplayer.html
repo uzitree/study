@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link rel="stylesheet" href="./res/vrplayer/css/style.css">
+    <script src="../vrplayer.win.js"></script>
+    <script src="./res/vrplayer/player/UtoVRPlayerGuide.js"></script>
+    <style>
+    #log{    
+      width: 330px;
+      height: 200px;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      color: white;
+      background: rgba(0,0,0,0.2);
+    }
+    </style>
+</head>
+<body>
+  <!--全景视频容器-->
+  <div id="panoDeskTop" class="panoDeskTop" style="width:300px;height:200px;position:relative"></div>
+  <div class="play_btn">播放按钮</div>
+</body>
+<script>
+  var myPlayer = null;
+  (function() {
+    myPlayer = new VrPlayer(
+      document.getElementById('panoDeskTop'), {
+        isGyro: false, // 是否开启陀螺仪
+        isDragAble: true, // 是否可以拖动场景
+        isVideoAutoPlay: false, // 是否自动播放
+        //coverPath: '/2880_1440_f.jpg',
+        coverPath: '/cover.png',
+        coverType: 'cover', // 封面类型：cover | vr
+        /*videoPath: 'http://vod5gct.nty.tv189.com/ceph_201907/42131919_v1/4000/playlist.m3u8',*/
+        videoPath: {
+          // 'bq':'http://cache.utovr.com/46fb467b2f9e46a28087a003a9769f1b/L2_zjeli9krl66jjole.mp4',
+          // 'gq':'http://cache.utovr.com/84df79ce74f24a0bb003912dc9cd9677/L2_uegkobqoxil4orfj.mp4',
+          'cq':'http://cache.utovr.com/46fb467b2f9e46a28087a003a9769f1b/L2_zjeli9krl66jjole.mp4'
+        }, 
+        videoType: 'mp4', // 视频类型：mp4 | m3u8
+        // playButton: document.querySelector('.play_btn')
+        ready: function () {
+          
+        }
+      }
+    );
+  }());
+
+  //debug
+  /*
+  console.log = function(s) {
+    let d = document.getElementById('log');
+    if (d === null) {
+      d = document.createElement('div');
+      d.id = 'log';
+      document.body.appendChild(d);
+    }
+    d.innerHTML += '<br>' + s;
+  }
+  */
+</script>
+</html>
