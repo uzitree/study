@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/* CSS Document */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+div,
+p,
+dl,
+dd,
+a,
+b,
+u,
+em,
+input,
+textarea,
+button,
+select,
+form,
+section,
+label,
+span,
+td,
+li,
+nav,
+footer,
+body,
+ul,
+i {
+  font-family: PingFangSC-Regular, "Noto SansCJK", Helvetica Neue, tahoma, arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+
+p {
+  word-break: break-all;
+  font-size: 0.24rem;
+  line-height: 2.8;
+}
+
+input,
+textarea,
+div,
+p,
+span,
+button {
+  font-size: 0.24rem;
+}
+
+input[type="text"],
+button {
+  border: 1px solid gray;
+  padding: 0.1rem 0.2rem;
+}
+
+.main-body {
+  padding: 0.2rem;
+}
+
+.main-body div.msg {
+  padding: 0.2rem 0;
+}
+
+.main-body div.msg>p {
+  background-color: #f8f0da;
+  line-height: 1.6;
+}
+
+.main-body .btn-container {
+  padding: 0.2rem 0;
+}
+
+.dl-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: #f1f1f1;
+  min-height: 1.2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.dl-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.dl-bar .logo {
+  background-image: url('img/icon_l_xiazhai.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.dl-bar .info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 0 0.2rem;
+}
+
+.dl-bar .info span {
+  font-size: 0.2rem;
+  color: #b9b9b9;
+}
+
+.dl-bar .info span:first-child>img {
+  width: 42%;
+}
+
+.dl-bar .btn {
+  background-image: -webkit-gradient(linear, left top, right top, from(#58d8fd), to(#45aaee));
+  background-image: -webkit-linear-gradient(left, #58d8fd, #45aaee);
+  background-image: -o-linear-gradient(left, #58d8fd, #45aaee);
+  background-image: linear-gradient(90deg, #58d8fd, #45aaee);
+  padding: 0.12rem 0.4rem;
+  border-radius: 1rem;
+  margin: 0 0.2rem;
+  color: #cbf3ff;
+  letter-spacing: 1px;
+}
+
+.dl-container .close {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #ddd;
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 1;
+}
